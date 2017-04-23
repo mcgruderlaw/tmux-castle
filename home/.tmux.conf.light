@@ -100,7 +100,7 @@ set -g status-bg white #white #colour229 #black originally
 set -g status-fg white
 set -g message-bg red
 set -g message-fg white
-set -g status-left '#[fg=colour239]#[bg=white] #S '
+set -g status-left '#[fg=colour246]#[bg=white] #S '
 #set -g status-left '#[fg=colour239] #S.#I.#P '
 #set -g status-left '#[fg=colour107]#[bg=black] #S.#I.#P #[default]'
 #set -g status-right '#[fg=white]#(hostname)@#(host `hostname` | cut -d " " -f 4) | %F %R'
