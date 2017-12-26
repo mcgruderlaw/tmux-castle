@@ -39,7 +39,7 @@ set-option -g history-limit 10000
 
 # colors
 #setw -g mode-bg #fdf6e3 #brightblue # black
-set-option -g default-terminal "xterm-256color"
+set-option -g default-terminal "rxvt-256color"
 
 # utf8 support
 #set-window-option -g utf8 on
@@ -107,7 +107,9 @@ set -g status-left '#[fg=colour246]#[bg=colour232] #S '
 #set -g status-right "#(hostname)@#(host `hostname` | cut -d " " -f 4)|#(uptime) |#(uptime | awk -F'[a-z]:' '{ print $2})|%F %R"
 #set -g status-right "#(hostname)|#(ip address) |#(uptime | awk -F: '{print $(NF\\)}' | sed s/' '//)|%F %R"
 ##LAST USED##set -g status-right "#[fg=colour239] $USER@#h | WAN:#(curl icanhazip.com) | LAN:#(ip addr | grep 'inet ' | grep global | awk '{print $2}') | #(uptime -p) | %F %R" #(ifconfig en1 | grep 'inet ' | awk '{print \"en1 \" $2}') #[fg=red]#(ifconfig tun0 | grep 'inet ' | awk '{print \"vpn \" $2}') "
-set -g status-right "#[fg=colour246]#[bg=colour232] WAN:#(curl icanhazip.com) | LAN:#(ip addr | grep 'inet ' | grep global | awk '{print $2}') | #(uptime -p) | %F %R" #(ifconfig en1 | grep 'inet ' | awk '{print \"en1 \" $2}') #[fg=red]#(ifconfig tun0 | grep 'inet ' | awk '{print \"vpn \" $2}') "
+#set -g status-right "#[fg=colour246]#[bg=colour000] WAN:#(curl icanhazip.com) | LAN:#(ip addr | grep 'inet ' | grep global | awk '{print $2}') | #(uptime -p) | %F %R" #(ifconfig en1 | grep 'inet ' | awk '{print \"en1 \" $2}') #[fg=red]#(ifconfig tun0 | grep 'inet ' | awk '{print \"vpn \" $2}') "
+#set -g status-right "#[fg=colour246]#[bg=colour000] WAN:#(curl icanhazip.com) | LAN:#(ip addr | grep 'inet ' | grep global | awk '{print $2}')"
+set -g status-right '#[fg=colour246]#(hostname)'
 set -g status-right-length 180
 
 #Titles (window number, program name, active (or not)
@@ -214,10 +216,11 @@ bind M-r rotate-window
 ############################################################################
 #Plugins
 ############################################################################
-# set -g @plugin 'tmux-plugins/tpm'
-# set -g @plugin 'tmux-plugins/tmux-sensible'
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-sensible'
+#############################################
 # set -g @plugin 'tmux-plugins/tmux-yank'
-# set -g @plugin 'tmux-plugins/tmux-resurrect'
+set -g @plugin 'tmux-plugins/tmux-resurrect'
 #set -g @plugin 'seebi/tmux-colors-solarized'
 # set -g @resurrect-strategy-vim 'session'
 # set -g @resurrect-capture-pane-contents 'on'
@@ -227,4 +230,4 @@ bind M-r rotate-window
 # set -g @colors-solarized 'dark'
 # #set -g @colors-solarized 'light'
 # 
-# run '~/.tmux/plugins/tpm/tpm'
+run '~/.tmux/plugins/tpm/tpm'
